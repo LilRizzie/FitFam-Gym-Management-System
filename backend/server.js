@@ -15,7 +15,7 @@ app.use(errorHandler);
 
 const port = Number(process.env.PORT) || 5000;
 if (require.main === module) {
-	app.listen(port, async () => {
+	app.listen(port, '0.0.0.0', async () => {
 		try {
 			const connection = await pool.getConnection();
 			await connection.query('SELECT 1');
